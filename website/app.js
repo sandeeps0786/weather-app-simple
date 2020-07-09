@@ -5,7 +5,7 @@ const app=express()
 const path=require('path')
 const { response } = require('express')
 const temperaturecode = require('../website/temperaturecode')
-
+const port=process.env.PORT || 4000
 
 const p= path.join(__dirname,'../holu/main')
 app.set('view engine','hbs')
@@ -40,9 +40,10 @@ app.get('/weather',(req,res)=>{
           })
       })
          
+    
 
 })
 
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log('setup is ready')
 })
